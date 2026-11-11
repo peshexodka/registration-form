@@ -181,3 +181,68 @@ button:focus-visible { outline: 3px solid #245b48; outline-offset: 4px; }
 @media (prefers-reduced-motion: reduce) {
   .strength-bar { transition: none; }
 }
+
+
+/* Новогоднее оформление. */
+body {
+  background:
+    radial-gradient(circle at 14% 18%, #e3bf7020 0, transparent 30%),
+    radial-gradient(circle at 85% 80%, #39775a55 0, transparent 45%),
+    #102f28;
+  position: relative;
+  isolation: isolate;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, #fff9 1px, transparent 2px),
+    radial-gradient(circle, #fff5 2px, transparent 3px),
+    radial-gradient(circle, #e9c87599 1px, transparent 2px);
+  background-size: 63px 79px, 137px 163px, 191px 113px;
+  background-position: 12px 20px, 45px 70px, 90px 15px;
+}
+.form-container {
+  position: relative;
+  overflow: hidden;
+  background: #fffcf5;
+  border: 1px solid #dcc58d;
+  box-shadow: 0 24px 80px #0004;
+}
+.form-container::before {
+  content: "";
+  display: block;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: repeating-linear-gradient(135deg, #a63d40 0 14px, #fffcf5 14px 28px, #245b48 28px 42px, #fffcf5 42px 56px);
+}
+.eyebrow { color: #756031; letter-spacing: 0.14em; }
+.holiday-mark {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  margin-top: 24px;
+  color: #8b692b;
+  background: #f4e9ce;
+  border: 1px solid #e4d2a6;
+  border-radius: 50%;
+  font-size: 30px;
+}
+h1 { margin-top: 18px; font-size: 33px; color: #204737; }
+.intro { color: #657063; }
+input { background: #fffefb; }
+button { background: #923638; box-shadow: 0 4px 12px #92363818; }
+button:hover:not(:disabled) { background: #76272b; }
+button:disabled { background: #923638; box-shadow: none; }
+button:focus-visible { outline-color: #923638; }
+.demo-note { border-top: 1px solid #e9e1cf; padding-top: 18px; color: #6f6a5b; }
+@media (max-width: 480px) {
+  h1 { font-size: 29px; }
+}
